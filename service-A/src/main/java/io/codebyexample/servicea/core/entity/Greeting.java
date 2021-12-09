@@ -1,4 +1,4 @@
-package io.codebyexample.helloworld.core.entity;
+package io.codebyexample.servicea.core.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

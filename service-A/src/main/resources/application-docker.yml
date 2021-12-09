@@ -1,0 +1,9 @@
+spring:
+  zipkin:
+    base-url: http://${ZIPKIN_HOST}:9411
+serviceb:
+  url: http://${SERVICE_B_HOST}:8082
+grpc:
+  client:
+    servicec:
+      address: static://${SERVICE_C_HOST}:8183

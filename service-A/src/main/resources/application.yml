@@ -1,0 +1,29 @@
+server:
+  port : 8081
+spring:
+  profiles:
+    active: local
+  application:
+    name: service-A
+serviceb:
+  url: http://localhost:8082
+  path:
+    greet: /greet/{id}
+feign:
+  client:
+    config:
+      serviceb:
+        connectTimeout: 10000
+        readTimeout: 10000
+resilience4j.circuitbreaker:
+  instances:
+    serviceB:
+      registerHealthIndicator: true
+      slidingWindowSize: 10
+      permittedNumberOfCallsInHalfOpenState: 3
+      slidingWindowType: TIME_BASED
+      minimumNumberOfCalls: 20
+      waitDurationInOpenState: 50s
+      failureRateThreshold: 50
+      eventConsumerBufferSize: 10
+#      recordFailurePredicate: io.github.robwin.exception.RecordFailurePredicate
