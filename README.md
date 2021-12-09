@@ -57,7 +57,7 @@ $ docker-compose -f ./docker-compose-service.yml -p spring-boot-service up -d --
 ## Run testing
 
 ```shell script
-curl http://localhost:8081/greet?name=World
+curl http://localhost:8081/greetb/1
 ```
 
 ## Stop project
@@ -73,3 +73,6 @@ $ docker-compose -f ./docker-compose-service.yml -p spring-boot-service down
 ## Contribute
 
 ## Reference
+
+- https://resilience4j.readme.io/docs/getting-started-3#configuration
+- https://github.com/spring-cloud-samples/spring-cloud-circuitbreaker-demo
