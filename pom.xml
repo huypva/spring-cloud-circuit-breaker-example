@@ -10,7 +10,8 @@
     <name>Parent</name>
 
     <modules>
-        <module>hello-world</module>
+        <module>service-A</module>
+        <module>service-B</module>
     </modules>
 
     <build>
