@@ -1,13 +1,13 @@
-package io.codebyexample.helloworld;
+package io.codebyexample.serviceb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Application {
+public class ServiceBApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(ServiceBApplication.class, args);
 	}
 
 }
