@@ -13,17 +13,15 @@ feign:
   client:
     config:
       serviceb:
-        connectTimeout: 10000
-        readTimeout: 10000
+        connectTimeout: 3000
+        readTimeout: 3000
 resilience4j.circuitbreaker:
   instances:
     serviceB:
       registerHealthIndicator: true
-      slidingWindowSize: 10
+      slidingWindowSize: 5
       permittedNumberOfCallsInHalfOpenState: 3
-      slidingWindowType: TIME_BASED
-      minimumNumberOfCalls: 20
-      waitDurationInOpenState: 50s
+      slidingWindowType: COUNT_BASED
+      minimumNumberOfCalls: 5
+      waitDurationInOpenState: 10s
       failureRateThreshold: 50
-      eventConsumerBufferSize: 10
-#      recordFailurePredicate: io.github.robwin.exception.RecordFailurePredicate

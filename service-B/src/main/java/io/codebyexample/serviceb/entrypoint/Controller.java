@@ -15,7 +15,7 @@ public class Controller {
   @GetMapping("/greet/{id}")
   public MessageB greet(@PathVariable(name = "id") int id) throws InterruptedException {
     log.info("ServiceB.greet");
-    Thread.sleep(15000);
+    Thread.sleep(id);
     return new MessageB("MessageB greet " + id);
   }
 }

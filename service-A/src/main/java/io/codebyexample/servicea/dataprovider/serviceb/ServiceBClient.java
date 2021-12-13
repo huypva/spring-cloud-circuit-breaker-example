@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient(value = "serviceb", url = "${serviceb.url}")
 public interface ServiceBClient {
 
-  @CircuitBreaker(name = "serviceB", fallbackMethod = "fallbackMethod")
+  @CircuitBreaker(name = "serviceB", fallbackMethod = "fallback")
   @RequestMapping(method = RequestMethod.GET, value = "${serviceb.path.greet}")
   public MessageB greet(@PathVariable(name = "id") int userId);
 
-  default MessageB fallbackMethod(Throwable throwable) {
+  default MessageB fallback(Throwable throwable) {
     return new MessageB("Fallback method");
   }
 }
